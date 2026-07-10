@@ -19,15 +19,15 @@ const experiences = [
     ],
     current: true,
   },
-  {
-    period: "Oct 2024 - June 2026",
-    role: "Software Development Engineer",
-    company: "Cubic Logics Pvt Ltd ",
-    description:
-      "HR365 Application (Master Application – Product, Demo & Content Management) - Authored and maintained WordPress-based internal Knowledge Base (KB) content — pages and posts documenting how each application works, including UI screenshots — for internal teams and stakeholders. Contributed to a product/offers showcase module, dynamically rendering templates and promotional content based on subscription tier (Plus/Premium/Enterprise) and license type, including monthly offer/discount updates. Collaborated with Sales and QA teams in Agile development cycles.",
-    technologies: ["HTML", "Css", "Javascript", "WordPress"],
-    current: true,
-  },
+  // {
+  //   period: "Oct 2024 - June 2026",
+  //   role: "Software Development Engineer",
+  //   company: "Cubic Logics Pvt Ltd ",
+  //   description:
+  //     "HR365 Application (Master Application – Product, Demo & Content Management) - Authored and maintained WordPress-based internal Knowledge Base (KB) content — pages and posts documenting how each application works, including UI screenshots — for internal teams and stakeholders. Contributed to a product/offers showcase module, dynamically rendering templates and promotional content based on subscription tier (Plus/Premium/Enterprise) and license type, including monthly offer/discount updates. Collaborated with Sales and QA teams in Agile development cycles.",
+  //   technologies: ["HTML", "Css", "Javascript", "WordPress"],
+  //   current: true,
+  // },
   {
     period: "May 2024 - Oct 2024",
     role: "Frontend Developer Intern",

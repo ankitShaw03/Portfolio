@@ -102,7 +102,7 @@ export const Hero = () => {
                   precision.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+              {/* <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Ankit Shaw — Frontend Developer with 2+ years of
                 experience building responsive, scalable web applications using
                 HTML5, CSS3, JavaScript (ES6+), TypeScript, and React.js.
@@ -110,6 +110,10 @@ export const Hero = () => {
                 application development, dynamic template/content rendering
                 systems, reusable UI components, CRUD operations, dashboard
                 development, and API integrations.
+              </p> */}
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                Hi, I'm Ankit Shaw — Frontend Developer with 2+ years of
+                experience in building responsive and scalable web applications using React.js, JavaScript, TypeScript, Fluent UI, Redux, and REST APIs. Experienced in developing enterprise applications, reusable components, CRUD operations, dashboard development, workflow automation (Power Automate), and API integrations.
               </p>
             </div>
 
