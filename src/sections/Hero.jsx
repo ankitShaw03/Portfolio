@@ -128,7 +128,9 @@ export const Hero = () => {
                 Download CV
               </AnimatedBorderButton>  */}
               <AnimatedBorderButton
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                as="a"
+                href="/resume.pdf"
+                download="Ankit_Shaw_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
                 Download CV
