@@ -28,7 +28,7 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-fluid-section relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
@@ -39,7 +39,7 @@ export const About = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
+            <h2 className="text-fluid-heading font-bold animate-fade-in animation-delay-100 text-secondary-foreground">
               Building the future,
               <span className="font-serif italic font-normal text-white">
                 {" "}
@@ -74,7 +74,7 @@ export const About = () => {
           </div>
 
           {/* Right Column - Hilights */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
             {highlights.map((item, idx) => (
               <div
                 key={idx}

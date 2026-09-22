@@ -59,7 +59,7 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-32 relative overflow-hidden">
+    <section id="experience" className="py-fluid-section relative overflow-hidden">
       <div
         className="absolute top-1/2 left-1/4 w-96
        h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2"
@@ -75,7 +75,7 @@ export const Experience = () => {
             Career Journey
           </span>
           <h2
-            className="text-4xl md:text-5xl font-bold
+            className="text-fluid-heading font-bold
            mt-4 mb-6 animate-fade-in animation-delay-100
             text-secondary-foreground"
           >

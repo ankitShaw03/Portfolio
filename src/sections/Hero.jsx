@@ -63,6 +63,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
@@ -92,7 +93,7 @@ export const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="text-fluid-hero font-bold animate-fade-in animation-delay-100">
                 Experienced in{" "}
                 <span className="text-primary glow-text">developing</span>
                 <br />
@@ -119,9 +120,8 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                <a href="#contact">Contact Me</a>{" "}
-                <ArrowRight className="w-5 h-5" />
+              <Button as="a" href="#contact" size="lg">
+                Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               {/* <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
@@ -157,7 +157,7 @@ export const Hero = () => {
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
               <div

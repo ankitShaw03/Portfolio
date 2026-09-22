@@ -32,9 +32,8 @@ test.describe("Contact Form and Information Flow", () => {
     await submitBtn.click();
 
     // Without environment variables set, error banner appears
-    // (Note: Contact.jsx error handling checks error.text instead of error.message, falling back to this message)
     await expect(
-      page.getByText(/Failed to send message\. Please try again later\./i)
+      page.getByText(/EmailJS configuration is missing/i)
     ).toBeVisible();
   });
 

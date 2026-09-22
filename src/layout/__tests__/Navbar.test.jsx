@@ -97,17 +97,9 @@ describe("Navbar component", () => {
     expect(container.querySelector(".animate-fade-in")).not.toBeInTheDocument();
   });
 
-  it("has no unexpected accessibility violations (documenting known button-name and nested-interactive issues)", async () => {
+  it("has no accessibility violations", async () => {
     const { container } = render(<Navbar />);
-    const results = await axe(container, {
-      rules: {
-        // Known issues in original implementation to be documented:
-        // 1. Mobile hamburger button lacks aria-label
-        // 2. Desktop Contact button nests <a href="#contact"> inside <button>
-        "button-name": { enabled: false },
-        "nested-interactive": { enabled: false },
-      },
-    });
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 });

@@ -128,6 +128,8 @@ export const Testimonials = () => {
               <div className="flex gap-2">
                 {testimonials.map((_, idx) => (
                   <button
+                    key={idx}
+                    aria-label={`Go to testimonial ${idx + 1}`}
                     onClick={() => setActiveIdx(idx)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       idx === activeIdx

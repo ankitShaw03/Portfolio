@@ -80,14 +80,14 @@ export const Contact = () => {
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again later.",
+          error.message || error.text || "Failed to send message. Please try again later.",
       });
     } finally {
       setIsLoading(false);
     }
   };
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="py-fluid-section relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -99,7 +99,7 @@ export const Contact = () => {
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-fluid-heading font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Let's build{" "}
             <span className="font-serif italic font-normal text-white">
               something great.
@@ -137,12 +137,13 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}

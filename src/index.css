@@ -13,7 +13,8 @@
   --color-secondary-foreground: #20b2a6;
 
   --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted-foreground: #94a3b8;
+  /* Enhanced WCAG contrast against background */
 
   --color-border: #242b32;
 
@@ -21,6 +22,11 @@
 
   --color-highlight: #f5a623;
   --color-surface: #1a2329;
+
+  /* Fluid typography & spacing tokens using clamp() */
+  --font-size-hero: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);
+  --font-size-heading: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
+  --spacing-section: clamp(2.5rem, 2rem + 3vw, 4rem);
 }
 
 @layer base {
@@ -41,6 +47,12 @@
   .font-serif {
     font-family: "Playfair Display", serif;
   }
+
+  /* Accessible keyboard navigation focus ring */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
 }
 
 @layer components {
@@ -57,24 +69,47 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 30px
-      color-mix(in srgb, var(--color-primary) 50%, transparent);
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
 
   .glow-border {
-    box-shadow: 0 0 20px
-        color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 }
 
 @layer utilities {
+
+  /* Fluid typography utilities */
+  .text-fluid-hero {
+    font-size: var(--font-size-hero);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-fluid-heading {
+    font-size: var(--font-size-heading);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .py-fluid-section {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+
+  /* Container query utility */
+  .card-container {
+    container-type: inline-size;
+  }
+
   @keyframes fade-in {
     from {
       opacity: 0;
       transform: translateY(20px);
       filter: blur(10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -83,26 +118,32 @@
   }
 
   @keyframes slow-drift {
+
     0%,
     100% {
       transform: translate(0, 0);
     }
+
     25% {
       transform: translate(20px, -30px);
     }
+
     50% {
       transform: translate(-15px, -20px);
     }
+
     75% {
       transform: translate(30px, 10px);
     }
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -112,6 +153,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
@@ -161,6 +203,7 @@
     0% {
       stroke-dashoffset: 400;
     }
+
     100% {
       stroke-dashoffset: -550;
     }
@@ -177,8 +220,20 @@
   }
 
   .timeline-glow {
-    box-shadow: 0 0 40px
-        color-mix(in srgb, var(--color-primary) 35%, transparent),
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  /* Accessible user preference: reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

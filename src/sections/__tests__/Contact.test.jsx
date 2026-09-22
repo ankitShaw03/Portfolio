@@ -65,10 +65,8 @@ describe("Contact section", () => {
     await user.click(submitBtn);
 
     await waitFor(() => {
-      // Note: Contact.jsx catch block checks error.text, but Error objects use error.message,
-      // so it falls back to the default error message: "Failed to send message. Please try again later."
       expect(
-        screen.getByText(/Failed to send message\. Please try again later\./i)
+        screen.getByText(/EmailJS configuration is missing/i)
       ).toBeInTheDocument();
     });
   });

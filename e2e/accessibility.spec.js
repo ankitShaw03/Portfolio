@@ -9,7 +9,6 @@ test.describe("Accessibility Audit", () => {
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa"])
-      .disableRules(["button-name"]) // Documented finding: mobile hamburger button lacks aria-label
       .analyze();
 
     // Filter for critical accessibility issues

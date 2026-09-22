@@ -54,12 +54,15 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button size="sm"><a href="#contact">Contact Me</a></Button>
+          <Button as="a" href="#contact" size="sm">
+            Contact Me
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground cursor-pointer"
+          className="md:hidden p-2 text-foreground cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,8 +84,12 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
-              <a href="#contact">Contact Me</a>
+            <Button
+              as="a"
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact Me
             </Button>
           </div>
         </div>
